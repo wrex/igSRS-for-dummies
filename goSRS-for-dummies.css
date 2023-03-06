@@ -1,0 +1,53 @@
+/* ==UserStyle==
+@name         goSRS-forDummies
+@namespace    github.com/wrex
+@version      1.0.0
+@license      MIT
+@description  Hides "easy" and "hard" buttons
+@author       Rex Walters
+@homepageURL  https://github.com/wrex/goSRS-for-dummies
+@supportURL   https://github.com/wrex/goSRS-for-dummies/issues
+==/UserStyle== */
+
+@-moz-document url-prefix(https://internetgoschool.com/training)
+{
+  /* 
+   * Visually hide the "forgot" and "easy" buttons on review screens. 
+   *
+   * This user style makes the "hard" and "good" buttons **MUCH** more prominent
+   * on the review screens, making it a simple binary decision most of the time.
+   * If you know the answer right away, click "good", otherwise, click "hard".
+   *
+   * "New" reviews only have three buttons ("not yet" and "got it").  Reviews of
+   * items you've seen before have 5 buttons all in the same div: "forgot",
+   * "hard", "good", "easy", and "more...".
+   *
+   * The "forgot" and "easy" buttons are still there if you need them, they are
+   * just near-invisible until you hover on them. Click "forgot" if you've
+   * completely forgotten something and want to start over. Click "easy" if it
+   * was egregiously easy and you don't want to see it again for as long as
+   * possible.  
+   */
+
+  .cont.ratings :nth-child(1):nth-last-child(5) button {
+    /* 1st child of 5 -- "forgot" */
+    background-color: #fdf3d3; /* background */
+    color: #fbe6a2; /* extremely low contrast */
+  }
+
+  .cont.ratings :nth-child(1):nth-last-child(5) button:hover {
+    /* display text on hover */
+    color: inherit;
+  }
+
+  .cont.ratings :nth-child(4):nth-last-child(2) button {
+    /* 4th child of 5 -- "easy" */
+    background-color: #fdf3d3; /* background */
+    color: #fbe6a2; /* extremely low contrast */
+  }
+
+  .cont.ratings :nth-child(4):nth-last-child(2) button:hover {
+    /* display text on hover */
+    color: inherit;
+  }
+}
